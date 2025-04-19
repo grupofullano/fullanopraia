@@ -10,10 +10,6 @@
 </head>
 
 <body>
-
-    <!-- Background Animation Text -->
-    <!-- <span class="bg-text-animation">GF</span> -->
-
     <!-- Profile -->
     <img class="my-photo" src="./img/logosFULLANO.png" alt="AR Logo">
     <h1 class="tituloft">Fullano Praia</h1>
@@ -87,6 +83,35 @@
         loading="lazy" 
         referrerpolicy="no-referrer-when-downgrade">
     </iframe>
+
+    <audio id="minhaMusica" src="./audio/trilhasonora.mp3" loop controls style="display: none;"></audio>
+
+  <script>
+    document.addEventListener('click', iniciarAudio);
+    document.addEventListener('touchstart', iniciarAudio); // Para dispositivos touch
+
+    var audioIniciado = false;
+    var musica = document.getElementById('minhaMusica');
+
+    function iniciarAudio() {
+      if (!audioIniciado) {
+        musica.play().catch(function(error) {
+          console.error('Erro ao iniciar o áudio:', error);
+        });
+        audioIniciado = true;
+        // Remove os listeners após a primeira interação
+        document.removeEventListener('click', iniciarAudio);
+        document.removeEventListener('touchstart', iniciarAudio);
+        // Opcional: Tornar os controles visíveis após iniciar
+        musica.style.display = 'block';
+      }
+    }
+
+    // Opcional: Garantir que o áudio esteja pronto para tocar
+    musica.addEventListener('canplaythrough', function() {
+      console.log('Áudio pronto para tocar.');
+    });
+  </script>
 
     <div class="copyright">
         <img src="./img/logoGFrodape.png" alt="AR Logo">
