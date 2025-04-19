@@ -10,7 +10,8 @@ html {
 }
 
 body {
-  background-color:rgb(46, 9, 43);
+  /*background-image: radial-gradient(circle, #A67BC7 0%, #764A98 100%);*/
+  background-image: url('./img/fundofullano.png');
   color: #e1e1f1;
   display: flex;
   flex-direction: column;
@@ -19,6 +20,22 @@ body {
   padding-top: 4rem;
   padding-bottom: 2rem;
   gap: 1rem;
+  background-repeat: no-repeat; /* Evita a repetição da imagem */
+  background-position: top center; /* Centraliza a imagem horizontal e verticalmente */
+}
+
+@font-face {
+  font-family: 'NorthernSoul-Caps'; /* Defina o nome da sua fonte */
+  src: url('./fonts/NorthernSoul-Caps.otf') format('truetype'); /* Caminho para o arquivo .ttf */
+  font-weight: normal; /* Peso da fonte */
+  font-style: normal;  /* Estilo da fonte */
+}
+
+@font-face {
+  font-family: 'Yftoow-R'; /* Defina um nome único para a segunda fonte */
+  src: url('./fonts/Yftoow-R.ttf') format('truetype'); /* Caminho para o arquivo da segunda fonte */
+  font-weight: normal; /* Defina o peso da fonte, ajuste se necessário */
+  font-style: normal;  /* Defina o estilo da fonte, ajuste se necessário */
 }
 
 .bg-text-animation {
@@ -40,6 +57,7 @@ body {
   aspect-ratio: 1/1;
   object-fit: cover;
   object-position: top;
+  border: 2px solid #F72575;
 }
 
 a {
@@ -49,7 +67,7 @@ a {
 
 .sosmed i {
   font-size: 1.5rem;
-  color: #764A98;
+  color: #ffffff;
 }
 
 .sosmed i:hover {
@@ -73,8 +91,26 @@ ul.links li:not(:last-child) {
   margin-bottom: 1rem;
 }
 
+.idfullano {
+    display: block; /* Para ocupar a largura total e evitar comportamentos inline */
+    width: 120%; /* Ocupa 80% da largura do container pai */
+    max-width: 500px; /* Define uma largura máxima para não ficar muito grande em desktops */
+    height: auto; /* Mantém a proporção da imagem */
+    margin: 1px auto; /* Centraliza a imagem e adiciona margem vertical */
+}
+
 .slogan {
   text-align: center;
+  font-family:'Yftoow-R', sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.tituloft {
+  text-align: center;
+  color: #ffffff;
+  font-family:'NorthernSoul-Caps', sans-serif;
+  font-size: 55px;
 }
 
 .links {
@@ -89,12 +125,13 @@ ul.links li:not(:last-child) {
   gap: 1rem;
   padding: 1rem;
   border-radius: 20px;
-  box-shadow: 8px 10px 0 #1A0619;
-  border: 2px solid #690F63;
+  box-shadow: 8px 10px 0 #2d193d;
+  border: 2px solid #F72575;
 }
 
 .icone-grande {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  color: #ffffff;
 }
 
 .link-card:hover {
@@ -109,10 +146,13 @@ ul.links li:not(:last-child) {
 .links .link-text {
   text-align: center;
   flex-grow: 1;
+  font-family:'NorthernSoul-Caps', sans-serif;
+  font-size: 32px;
+  color: #ffffff;
 }
 
 .link-action {
-  color: #4C1248;
+  color: #ffffff;
   cursor: pointer;
   padding: 10px;
 }
@@ -123,13 +163,14 @@ ul.links li:not(:last-child) {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  color: #764A98;
-  font-size: 0.75rem;
+  color: #ffffff;
+  font-size: 1rem;
+  font-family:'Yftoow-R', sans-serif;
 }
 
 .copyright img {
   width: 13rem;
-  opacity: 0.4;
+  /*opacity: 0.4;*/
 }
 
 #toast {
