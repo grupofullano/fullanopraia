@@ -85,33 +85,37 @@
     </iframe>
 
     <audio id="minhaMusica" src="./audio/trilhasonora.mp3" loop controls style="display: none;"></audio>
-
-  <script>
-    document.addEventListener('click', iniciarAudio);
-    document.addEventListener('touchstart', iniciarAudio); // Para dispositivos touch
-
-    var audioIniciado = false;
-    var musica = document.getElementById('minhaMusica');
-
-    function iniciarAudio() {
-      if (!audioIniciado) {
-        musica.play().catch(function(error) {
-          console.error('Erro ao iniciar o áudio:', error);
-        });
-        audioIniciado = true;
-        // Remove os listeners após a primeira interação
-        document.removeEventListener('click', iniciarAudio);
-        document.removeEventListener('touchstart', iniciarAudio);
-        // Opcional: Tornar os controles visíveis após iniciar
-        musica.style.display = 'block';
+  
+    <script>
+      const body = document.querySelector('body');
+      const musica = document.getElementById('minhaMusica');
+      let audioIniciado = false;
+  
+      function iniciarAudio() {
+        if (!audioIniciado) {
+          musica.play().then(() => {
+            console.log('Áudio iniciado com sucesso.');
+            audioIniciado = true;
+            body.removeEventListener('click', iniciarAudio);
+            body.removeEventListener('touchstart', iniciarAudio);
+            musica.style.display = 'block';
+          }).catch(error => {
+            console.error('Erro ao iniciar o áudio:', error);
+            musica.style.display = 'block'; // Mostrar controles em caso de falha
+          });
+        }
       }
-    }
-
-    // Opcional: Garantir que o áudio esteja pronto para tocar
-    musica.addEventListener('canplaythrough', function() {
-      console.log('Áudio pronto para tocar.');
-    });
-  </script>
+  
+      window.addEventListener('DOMContentLoaded', iniciarAudio);
+      window.addEventListener('load', iniciarAudio);
+  
+      body.addEventListener('click', iniciarAudio);
+      body.addEventListener('touchstart', iniciarAudio);
+  
+      musica.addEventListener('canplaythrough', function() {
+        console.log('Áudio pronto para tocar.');
+      });
+    </script>
 
     <div class="copyright">
         <img src="./img/logoGFrodape.png" alt="AR Logo">
