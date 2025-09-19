@@ -18,7 +18,7 @@ Venha aproveitar coquetéis especiais, petiscos deliciosos e uma vista incrível
 
 📍 Aberto todos os dias – porque vibe boa não tem hora marcada!
 
-Para mais informações, [acesse nosso site](https://grupofullano.com.br).
+Para mais informações, [acesse nosso site](https://grupofullano.com.br/fullanopraia).
 
 ## 🤝 Colaboradores
 
