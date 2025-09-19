@@ -17,4 +17,5 @@ O acesso a este repositório é concedido apenas para fins de visualização.
 Nenhum direito de uso, reprodução ou redistribuição é concedido ou implícito.
 
 Para obter permissão, entre em contato: grupofullanoti@gmail.com
+
 Mais informações: https://grupofullano.com.br
